@@ -40,7 +40,7 @@ function JokeList() {
             getJokes();
     }, [numJokes]);
 
-    const generateNewJokes = () => {
+    const getMoreJokes = () => {
         setNumJokes(prevCount => prevCount + 1);
         setIsLoading(true);
     }
@@ -69,9 +69,9 @@ function JokeList() {
 
     return (
         <div className="JokeList">
-        <h1>Random dad jokes</h1>
-            <button className="JokeList-getmore" onClick={generateNewJokes}>
-                Get New Jokes
+        <h1>Random Dad Jokes</h1>
+            <button className="JokeList-getmore" onClick={getMoreJokes}>
+                Get More Jokes
             </button>
 
             {sortedJokes.map(({ id, joke, votes }) => (
